@@ -1,0 +1,24 @@
+Augmenting GenUI with Design Patterns
+
+% Promise: What is a technology that promises us something good?
+Language models (LMs) can now generative high-fidelity UI screens (GenUI) based on a user's natural language description.
+
+% Problem: What is the problem that prevents this technology from realizing its promise?
+However, the GenUI process remains a ``black box'' that lacks transparency and control: it is often unclear how LMs come up with a particular UI design or how a designer can steer LMs to follow a specific direction beyond prompt engineering.
+
+% Prior work: What is the most representative prior work that has attempted to solve this problem and why did it fail?
+To address this limitation, prior work is mainly divided into two approaches:
+\one Before generation---improving how users convey their design intent beyond text prompt [\xx] and;
+\two After generation---enabling targeted iteration, such as decomposing a generated UI into slots wherein designers can have fine control over specific levels of elements [\xx].
+None of these approaches directly taps into the actual generation process.
+
+% Proposed solution: What is your proposed solution given where prior work fell short?
+We propose a complementary approach---using interaction design patterns (hereafter referred to as ``patterns'' for brevity) as an intermediate layer to enhance the transparency and control of GenUI.
+Specifically, a pattern is an abstract specification of a prototypical type of UI screen common amongst multiple applications. For example, for many e-commerce mobile apps (\eg shopping or food delivery), the pattern is a list of categories where each row horizontally presents items of that category.
+Our approach first maps a prompt to a pattern, which we then use to condition LMs' generation of UI code, \eg using specific elements from a design system to instantiate a pattern.
+We implemented this pattern-based approach as a model context provider (MCP), called PatternMCP, and demonstrate its usefulness on PatternGenUI--a front-end where a designer enters a prompt to generate a UI screen, selects and/or edit relevant patterns retrieved from a curated library (currently consisting of [N] patterns), and obtains a pattern-guided generated UI from an LM.
+
+% Proof of contribution: What is your proof to validate that your proposed solution contributes to solving that problem?
+To validate our approach, we conducted a two-fold evaluation:
+First, an ablative evaluation shows that users often preferred UI screens generated with PatternMCP than the ones without it even though the underlying LM was the same.
+Further, a designer evaluation identifies both strengths and trade-offs of PatternGenUI compared to a state-of-the-art professional tool. [more detailed findings on transparency and control]
