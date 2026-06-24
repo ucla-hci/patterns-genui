@@ -1,4 +1,4 @@
-# Folmer — nteraction Design Patterns. Interaction Design Foundation
+# Folmer — Interaction Design Patterns. Interaction Design Foundation
 
 ```
 Folmer, E. (2015, July 5). Interaction Design Patterns. Interaction Design Foundation - IxDF. https://www.interaction-design.org/literature/book/the-glossary-of-human-computer-interaction/interaction-design-patterns
